@@ -22,7 +22,7 @@ func TestDriversService_ListAll(t *testing.T) {
 
 	for _, d := range drivers {
 		if d.IsConstructor {
-			t.Errorf("Drivers.ListAll returned team %v with ID %v. No teams should be returned.", d.FirstName, d.ID)
+			t.Errorf("Drivers.ListAll returned team %v with ID %v. No teams should be returned.", d.DisplayName, d.ID)
 		}
 	}
 }
@@ -44,7 +44,7 @@ func TestDriversService_GetOne(t *testing.T) {
 	}
 
 	if d1.IsConstructor {
-		t.Errorf("Drivers.GetOne returned team %v with ID %v. want driver with id %v.", d1.FirstName, d1.ID, d1Id)
+		t.Errorf("Drivers.GetOne returned team %v with ID %v. want driver with id %v.", d1.DisplayName, d1.ID, d1Id)
 	}
 
 	d2, err := c.Drivers.GetOne(context.Background(), 5)
@@ -53,7 +53,7 @@ func TestDriversService_GetOne(t *testing.T) {
 	}
 
 	if d2 != nil {
-		t.Errorf("Drivers.GetOne returned driver/team %v with ID %v, want nil", d2.FirstName, d2.ID)
+		t.Errorf("Drivers.GetOne returned driver/team %v with ID %v, want nil", d2.DisplayName, d2.ID)
 	}
 
 	d3, err := c.Drivers.GetOne(context.Background(), 1000)
@@ -62,6 +62,6 @@ func TestDriversService_GetOne(t *testing.T) {
 	}
 
 	if d3 != nil {
-		t.Errorf("Drivers.GetOne returned driver/team %v with ID %v, want nil", d3.FirstName, d3.ID)
+		t.Errorf("Drivers.GetOne returned driver/team %v with ID %v, want nil", d3.DisplayName, d3.ID)
 	}
 }
