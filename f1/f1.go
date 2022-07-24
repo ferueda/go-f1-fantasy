@@ -29,8 +29,9 @@ type Client struct {
 	shared service // Reuse a single struct instead of allocating one for each service on the heap.
 
 	// Services used for talking to different parts of the API.
-	Drivers *DriversService
-	Teams   *TeamsService
+	Drivers  *DriversService
+	Teams    *TeamsService
+	Circuits *CircuitsService
 }
 
 // NewClient returns a new F1 Fantasy Gamex API client.
@@ -49,6 +50,7 @@ func NewClient(httpClient *http.Client) *Client {
 	c.shared.client = c
 	c.Drivers = (*DriversService)(&c.shared)
 	c.Teams = (*TeamsService)(&c.shared)
+	c.Circuits = (*CircuitsService)(&c.shared)
 	return c
 }
 
