@@ -23,10 +23,8 @@ type service struct {
 }
 
 type Client struct {
-	http        *http.Client // HTTP client used to communicate with the API.
-	baseURL     *url.URL     // Base URL for API requests
-	userEmail   string       // User's email used for methods which require authentication
-	accessToken string       // Access token used for methods which require authentication
+	http    *http.Client // HTTP client used to communicate with the API.
+	baseURL *url.URL     // Base URL for API requests
 
 	shared service // Reuse a single struct instead of allocating one for each service on the heap.
 
