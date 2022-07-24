@@ -36,7 +36,7 @@ func TestTeamsService_GetOne(t *testing.T) {
 	}
 
 	if t1 == nil {
-		t.Errorf("Teams.GetOne returned nil, want team with id %v", t1Id)
+		t.Errorf("Teams.GetOne returned %v, want team with id %v", nil, t1Id)
 	}
 
 	if t1.ID != t1Id {
@@ -53,7 +53,7 @@ func TestTeamsService_GetOne(t *testing.T) {
 	}
 
 	if t2 != nil {
-		t.Errorf("Teams.GetOne returned driver/team %v with ID %v, want nil", t2.DisplayName, t2.ID)
+		t.Errorf("Teams.GetOne returned driver/team %v with ID %v, want %v", t2.DisplayName, t2.ID, nil)
 	}
 
 	dt3, err := c.Teams.GetOne(context.Background(), 1000)
@@ -62,6 +62,6 @@ func TestTeamsService_GetOne(t *testing.T) {
 	}
 
 	if dt3 != nil {
-		t.Errorf("Teams.GetOne returned driver/team %v with ID %v, want nil", dt3.DisplayName, dt3.ID)
+		t.Errorf("Teams.GetOne returned driver/team %v with ID %v, want %v", dt3.DisplayName, dt3.ID, nil)
 	}
 }

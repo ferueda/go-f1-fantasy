@@ -36,7 +36,7 @@ func TestDriversService_GetOne(t *testing.T) {
 	}
 
 	if d1 == nil {
-		t.Errorf("Drivers.GetOne returned nil, want driver with id %v", d1Id)
+		t.Errorf("Drivers.GetOne returned %v, want driver with id %v", nil, d1Id)
 	}
 
 	if d1.ID != d1Id {
@@ -53,7 +53,7 @@ func TestDriversService_GetOne(t *testing.T) {
 	}
 
 	if d2 != nil {
-		t.Errorf("Drivers.GetOne returned driver/team %v with ID %v, want nil", d2.DisplayName, d2.ID)
+		t.Errorf("Drivers.GetOne returned driver/team %v with ID %v, want %v", d2.DisplayName, d2.ID, nil)
 	}
 
 	d3, err := c.Drivers.GetOne(context.Background(), 1000)
@@ -62,6 +62,6 @@ func TestDriversService_GetOne(t *testing.T) {
 	}
 
 	if d3 != nil {
-		t.Errorf("Drivers.GetOne returned driver/team %v with ID %v, want nil", d3.DisplayName, d3.ID)
+		t.Errorf("Drivers.GetOne returned driver/team %v with ID %v, want %v", d3.DisplayName, d3.ID, nil)
 	}
 }
