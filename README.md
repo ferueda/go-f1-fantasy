@@ -2,7 +2,7 @@ go-f1-fantasy
 =======
 
 [![GoDoc](https://godoc.org/github.com/ferueda/go-f1-fantasy?status.svg)](http://godoc.org/github.com/ferueda/go-f1-fantasy)
-[![Test Status](https://github.com/ferueda/go-f1-fantasy/workflows/test/badge.svg)](https://github.com/ferueda/go-f1-fantasy/actions?query=workflow%3Atest)
+[![Test Status](https://github.com/ferueda/go-f1-fantasy/workflows/tests/badge.svg)](https://github.com/ferueda/go-f1-fantasy/actions?query=workflow%3Atests)
 
 go-f1-fantasy is a Go client library for accessing the [F1 Fantasy Game API](https://fantasy.formula1.com/).
 
